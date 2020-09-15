@@ -76,7 +76,39 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = $this->product->find($id);
+
+        $data = $request->all();
+
+        /*
+         * Validação de campos
+         */
+        $validate = validator($data, $this->product->rules($id));
+
+        if ($validate->fails()) {
+            $messages = $validate->messages();
+
+            return response()->json(['validate.error', $messages]);
+        }
+
+        /**
+         * Validação, verificando se o produto realmente existe
+         */
+
+        if (!$product)
+            return response()->json(['error' => 'not_found']);
+
+        /**
+         * Realizando o update, caso o update retorne false, será retornado o erro
+         */
+
+        if (!$update = $product->update($data))
+            return response()->json(['error' => 'product_not_update'], 500);
+
+        /**
+         * Retorna os dados que foram atualizados no if anterior
+         */
+        return response()->json(['data' => $update]);
     }
 
     /**

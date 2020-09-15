@@ -9,10 +9,14 @@ class Product extends Model
     protected $fillable = ['name', 'description'];
 
     // Regras de validação
-    public function rules()
+    public function rules($id = '')
     {
         return [
-            'name'        => 'required|min:3|max:100|unique:products',
+            /**
+             * O campo name só poder ser igual ao name do usuario correspondente ao
+             * id do usuario que  foi passado como parametro.
+             */
+            'name'        => "required|min:3|max:100|unique:products,name,{$id},id",
             'description' => 'required|min:3|max:100'
         ];
     }
