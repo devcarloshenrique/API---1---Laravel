@@ -34,7 +34,20 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $validate = validator($data, $this->product->rules());
+
+        if ($validate->fails()) {
+            $messages = $validate->messages();
+
+            return response()->json(['validate.error', $messages]);
+        }
+
+        if (!$insert = ['result' => $this->product->create($data)]) {
+            return response()->json(['error' => 'Error insert'], 500);
+        }
+
+        return response()->json($insert);
     }
 
     /**
