@@ -1,6 +1,7 @@
 <?php
 
 Route::post('auth', 'Auth\AuthApiController@authenticate');
+Route::post('auth-refresh', 'Auth\AuthApiController@refreshToken');
 
 Route::group(['prefix' => 'V1'], function () {
 
