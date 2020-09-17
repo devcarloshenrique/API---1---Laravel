@@ -1,16 +1,21 @@
 <?php
 
+Route::post('auth', 'Auth\AuthApiController@authenticate');
+
 Route::group(['prefix' => 'V1'], function () {
 
-    Route::get('products', 'Api\V1\ProductController@index');
+    Route::group(['middleware' => 'jwt.auth'], function () {
 
-    Route::post('products', 'Api\V1\ProductController@store');
+        Route::get('products', 'Api\V1\ProductController@index');
 
-    Route::get('products/{id}', 'Api\V1\ProductController@show');
+        Route::post('products', 'Api\V1\ProductController@store');
 
-    Route::put('products/{id}', 'Api\V1\ProductController@update');
+        Route::get('products/{id}', 'Api\V1\ProductController@show');
 
-    Route::delete('products/{id}', 'Api\V1\ProductController@destroy');
+        Route::put('products/{id}', 'Api\V1\ProductController@update');
 
-    Route::post('products/search', 'Api\V1\ProductController@search');
+        Route::delete('products/{id}', 'Api\V1\ProductController@destroy');
+
+        Route::post('products/search', 'Api\V1\ProductController@search');
+    });
 });
