@@ -11,4 +11,6 @@ Route::group(['prefix' => 'V1'], function () {
     Route::put('products/{id}', 'Api\V1\ProductController@update');
 
     Route::delete('products/{id}', 'Api\V1\ProductController@destroy');
+
+    Route::post('products/search', 'Api\V1\ProductController@search');
 });

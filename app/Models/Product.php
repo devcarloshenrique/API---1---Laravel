@@ -20,4 +20,22 @@ class Product extends Model
             'description' => 'required|min:3|max:100'
         ];
     }
+
+    public function rulesSearch()
+    {
+        return [
+            'key-search' => 'required',
+        ];
+    }
+
+    public function search($data, $totalPage)
+    {
+        return $this
+            /**
+             * orWhere para pesquisar pelo name ou pela descrição, LIKE é pesquisa SQL
+             */
+            ->where('name', $data['key-search'])
+            ->orWhere('description', 'LIKE', "% {$data['key-search']}%")
+            ->paginate($totalPage);
+    }
 }
