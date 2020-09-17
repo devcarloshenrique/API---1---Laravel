@@ -1,11 +1,14 @@
 <?php
 
-Route::get('products', 'API\ProductController@index');
+Route::group(['prefix' => 'V1'], function () {
 
-Route::post('products', 'API\ProductController@store');
+    Route::get('products', 'Api\V1\ProductController@index');
 
-Route::get('products/{id}', 'API\ProductController@show');
+    Route::post('products', 'Api\V1\ProductController@store');
 
-Route::put('products/{id}', 'API\ProductController@update');
+    Route::get('products/{id}', 'Api\V1\ProductController@show');
 
-Route::delete('products/{id}', 'API\ProductController@destroy');
+    Route::put('products/{id}', 'Api\V1\ProductController@update');
+
+    Route::delete('products/{id}', 'Api\V1\ProductController@destroy');
+});
