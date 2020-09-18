@@ -20,3 +20,5 @@ Route::group(['prefix' => 'V1'], function () {
         Route::post('products/search', 'Api\V1\ProductController@search');
     });
 });
+
+Route::get('products/search', 'Api\V1\ProductController@search')->middleware('jwt.auth');
