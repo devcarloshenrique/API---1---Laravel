@@ -1,0 +1,329 @@
+{
+	"info": {
+		"_postman_id": "4051502e-387b-4123-b8cb-d00d7a0a0afc",
+		"name": "Laravel-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://laravel-api.test/public/api/V1/products?page={page}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sYXJhdmVsLWFwaS50ZXN0XC9wdWJsaWNcL2FwaVwvYXV0aCIsImlhdCI6MTYwMDQzMjYyOCwiZXhwIjoxNjAwNDM2MjI4LCJuYmYiOjE2MDA0MzI2MjgsImp0aSI6IjNoQVFrcEVlMGQxVEN1bUkiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.jqxmeZPP68NWbJP2Fz2agel-WfduW1EXllMJjKA2DKA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://laravel-api.test/public/api/V1/products?page=1",
+					"protocol": "http",
+					"host": [
+						"laravel-api",
+						"test"
+					],
+					"path": [
+						"public",
+						"api",
+						"V1",
+						"products"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://laravel-api.test/public/api/V1/products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sYXJhdmVsLWFwaS50ZXN0XC9wdWJsaWNcL2FwaVwvYXV0aCIsImlhdCI6MTYwMDQzMjYyOCwiZXhwIjoxNjAwNDM2MjI4LCJuYmYiOjE2MDA0MzI2MjgsImp0aSI6IjNoQVFrcEVlMGQxVEN1bUkiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.jqxmeZPP68NWbJP2Fz2agel-WfduW1EXllMJjKA2DKA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://laravel-api.test/public/api/V1/products?name=Produto Novo 4&description=Descrição Nova 4",
+					"protocol": "http",
+					"host": [
+						"laravel-api",
+						"test"
+					],
+					"path": [
+						"public",
+						"api",
+						"V1",
+						"products"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Produto Novo 4"
+						},
+						{
+							"key": "description",
+							"value": "Descrição Nova 4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://laravel-api.test/public/api/V1/products/{id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sYXJhdmVsLWFwaS50ZXN0XC9wdWJsaWNcL2FwaVwvYXV0aCIsImlhdCI6MTYwMDQyODY1OCwiZXhwIjoxNjAwNDMyMjU4LCJuYmYiOjE2MDA0Mjg2NTgsImp0aSI6IlVxVWtLclE1dGkxc21qQXQiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.O7wnCKpe6KllGZmzylApnoEN8xpLsFI0r97BS0mFflo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://laravel-api.test/public/api/V1/products/1",
+					"protocol": "http",
+					"host": [
+						"laravel-api",
+						"test"
+					],
+					"path": [
+						"public",
+						"api",
+						"V1",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://laravel-api.test/public/api/V1/products/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://laravel-api.test/public/api/V1/products/23?name=Produto Novo 1&description=Descrição Nova 4",
+					"protocol": "http",
+					"host": [
+						"laravel-api",
+						"test"
+					],
+					"path": [
+						"public",
+						"api",
+						"V1",
+						"products",
+						"23"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Produto Novo 1"
+						},
+						{
+							"key": "description",
+							"value": "Descrição Nova 4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://laravel-api.test/public/api/V1/products/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://laravel-api.test/public/api/V1/products/23",
+					"protocol": "http",
+					"host": [
+						"laravel-api",
+						"test"
+					],
+					"path": [
+						"public",
+						"api",
+						"V1",
+						"products",
+						"23"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://laravel-api.test/public/api/V1/products/search",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://laravel-api.test/public/api/V1/products/search?key-search=quos&page=1",
+					"protocol": "http",
+					"host": [
+						"laravel-api",
+						"test"
+					],
+					"path": [
+						"public",
+						"api",
+						"V1",
+						"products",
+						"search"
+					],
+					"query": [
+						{
+							"key": "key-search",
+							"value": "quos"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://laravel-api.test/public/api/auth",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "name",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://laravel-api.test/public/api/auth?email=devcarloshenrique@gmail.com&password=admin",
+					"protocol": "http",
+					"host": [
+						"laravel-api",
+						"test"
+					],
+					"path": [
+						"public",
+						"api",
+						"auth"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "devcarloshenrique@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "admin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://laravel-api.test/public/api/auth-refresh",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sYXJhdmVsLWFwaS50ZXN0XC9wdWJsaWNcL2FwaVwvYXV0aC1yZWZyZXNoIiwiaWF0IjoxNjAwMzcxNjU2LCJleHAiOjE2MDAzNzYzODYsIm5iZiI6MTYwMDM3Mjc4NiwianRpIjoiNVV2RnhJYlhjZUc5YzNycCIsInN1YiI6MSwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.1L2fyXQnPzwPOPQvZF2kVUsC6O_XQ4E2IN11jr9D0kE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://laravel-api.test/public/api/auth-refresh",
+					"protocol": "http",
+					"host": [
+						"laravel-api",
+						"test"
+					],
+					"path": [
+						"public",
+						"api",
+						"auth-refresh"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sYXJhdmVsLWFwaS50ZXN0XC9wdWJsaWNcL2FwaVwvYXV0aCIsImlhdCI6MTYwMDM2NTM2NiwiZXhwIjoxNjAwMzY4OTY2LCJuYmYiOjE2MDAzNjUzNjYsImp0aSI6IkNiTFlHejkyZ0FOc3NXYUIiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.zvzexP1nmMAub-qQtpKi7zbp2L_dJss0UYcbP_mg14k",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://laravel-api.test/public/api/products/search",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sYXJhdmVsLWFwaS50ZXN0XC9wdWJsaWNcL2FwaVwvYXV0aCIsImlhdCI6MTYwMDQzNzAzOCwiZXhwIjoxNjAwNDQwNjM4LCJuYmYiOjE2MDA0MzcwMzgsImp0aSI6IkNWaXZlemwyZzlreDJSc2UiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.qUOVNN6mvLS8Z4ml_kX0LFRnN_nSLqBauKPcSRK7YxA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://laravel-api.test/public/api/products/search?key-search=quos&page=1",
+					"protocol": "http",
+					"host": [
+						"laravel-api",
+						"test"
+					],
+					"path": [
+						"public",
+						"api",
+						"products",
+						"search"
+					],
+					"query": [
+						{
+							"key": "key-search",
+							"value": "quos"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
